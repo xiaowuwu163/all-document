@@ -65,4 +65,76 @@ V -- view 逻辑控制层，定义视图函数
 
 2、上传文件用request.FILES 获取文件数据
 
-​	
+##### 4、日期时间区设置
+
+```
+LANGUAGE_CODE = 'en-us'
+
+TIME_ZONE = 'Asia/Shanghai'
+
+DATETIME_FORMAT = 'Y-m-d H:i:s'
+
+USE_I18N = True
+
+USE_L10N = False
+
+USE_TZ = False
+```
+
+##### 5、邮箱配置	
+
+```
+# 邮箱配置
+EMAIL_USE_SSL = True
+EMAIL_HOST = 'smtp.exmail.qq.com'  # 如果是 163 改成 smtp.163.com
+# EMAIL_HOST = 'smtp.qq.com'  # 如果是 163 改成 smtp.163.com
+EMAIL_PORT = 465
+EMAIL_HOST_USER = '2128@kingon.cn' # 帐号
+EMAIL_HOST_PASSWORD = ''  # 密码
+DEFAULT_FROM_EMAIL = '监控主机<2128@kingon.cn>' #默认主题显示
+```
+
+6、mysql 数据库连接设置
+
+```
+DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # }
+
+    'default': {
+                'ENGINE': 'django.db.backends.mysql',
+                'NAME': 'KingonPaas',
+                'HOST':"172.10.0.103",
+                'PORT':3306,
+                'USER':"root",
+                'PASSWORD':"kingon", #这里要用引号
+            }
+}
+```
+
+在projectName 目录下的_ _init_ _ _.py文件中添加
+
+```
+import pymysql
+
+pymysql.install_as_MySQLdb()
+```
+
+7、登录验证和创建加密用户模块
+
+```
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import login,authenticate,logout
+from django.contrib.auth.models import User
+from django.views.decorators.csrf import csrf_exempt
+
+@login_required(login_url='/login.html')
+
+@csrf_exempt
+def page_not_found(request):
+    return render_to_response('404.html')
+    
+ user = User.objects.create_user(username='kingon',password='12345') #create_user()创建用户，秘密你是加密，Django验证登录必须是加密密码
+```

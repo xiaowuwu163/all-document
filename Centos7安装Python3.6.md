@@ -9,7 +9,7 @@
 ```
 yum -y groupinstall "Development tools"
 yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel
-12
+
 ```
 
 #### 下载python3的安装包

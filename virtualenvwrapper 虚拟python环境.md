@@ -4,6 +4,8 @@
 
 　　安装virtualenvwrapper(确保virtualenv已安装)
 
+ln -s /usr/local/python3/bin/virtualenv /usr/local/bin/virtualenv
+
 ```
 pip install virtualenvwrapper
 pip install virtualenvwrapper-win　　#Windows使用该命令
@@ -13,7 +15,7 @@ pip install virtualenvwrapper-win　　#Windows使用该命令
 
 ```
 export WORKON_HOME=~/Envs
-source /usr/local/bin/virtualenvwrapper.sh　　
+source /usr/local/python3/bin/virtualenvwrapper.sh　　
 ```
 
 　　第一行：virtualenvwrapper存放虚拟环境目录
