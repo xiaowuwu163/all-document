@@ -15,7 +15,7 @@ wget http://download.redis.io/releases/redis-4.0.2.tar.gz
 ```
 tar xzf redis-4.0.2.tar.gz
 cd redis-4.0.2
-make
+make  （出错误：jemalloc/jemalloc.h：没有那个文件或目录 执行 make MALLOC=libc）
 make install
 ```
 

@@ -16,7 +16,7 @@ yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel r
 
 ```
 wget https://www.python.org/ftp/python/3.6.2/Python-3.6.2.tar.xz
-1
+
 ```
 
 #### 创建python3目录并解压：
@@ -24,7 +24,7 @@ wget https://www.python.org/ftp/python/3.6.2/Python-3.6.2.tar.xz
 ```
 mkdir /usr/local/python3 
 tar -xvJf  Python-3.6.2.tar.xz
-12
+
 ```
 
 #### 编译安装
@@ -33,7 +33,7 @@ tar -xvJf  Python-3.6.2.tar.xz
 cd Python-3.6.2
 ./configure --prefix=/usr/local/python3
 make && make install
-123
+
 ```
 
 #### 创建连接测试安装
@@ -41,7 +41,7 @@ make && make install
 ```
 ln -s /usr/local/python3/bin/python3 /usr/bin/python3  # 在/usr/bin 目录下存放python3的快捷方式
 ln -s /usr/local/python3/bin/pip3 /usr/bin/pip3  # 在/usr/bin 目录下存放pip3的快捷方式
-12
+
 ```
 
 ```
@@ -50,7 +50,7 @@ Python 3.6.2 (default, Sep 21 2018, 12:04:18)
 [GCC 4.8.5 20150623 (Red Hat 4.8.5-28)] on linux
 Type "help", "copyright", "credits" or "license" for more information.
 >>> 
-12345
+
 ```
 
 #### 注：Linux目录的作用
