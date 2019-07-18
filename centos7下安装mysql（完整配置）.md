@@ -70,7 +70,7 @@ mysql> set global validate_password_policy=0;
 mysql> set global validate_password_length=1;
 ```
 
-还有一个问题就是Yum Repository,以后每次 yum 操作都会自动更新，需要把这个卸载掉
+### 还有一个问题就是Yum Repository,以后每次 yum 操作都会自动更新，需要把这个卸载掉
 
 ```
 [root@localhost ~]# yum -y remove mysql57-community-release-el7-10.noarch
